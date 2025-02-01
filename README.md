@@ -13,3 +13,5 @@ Ao rodar o código em uma placa Raspberry Pi Pico W, o usuário pode incrementar
 Caso queira executar o código pelo simulador Wokwi, pode-se usar os 2 botões do diagrama para simular os botões A e B que terá o mesmo efeito.
 
 # Link do vídeo demonstração
+
+https://youtube.com/shorts/dBbmkBFaCA0?feature=share
