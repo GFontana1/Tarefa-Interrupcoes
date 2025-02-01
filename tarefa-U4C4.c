@@ -96,7 +96,7 @@ void display_num(int num) {
     }
 
     // Definição dos números de 0 a 9 em uma matriz 5x5
-    const uint32_t nums[10][25] = {
+    const uint32_t matriz_led[10][25] = {
         {0,1,1,1,0, 0,1,0,1,0, 0,1,0,1,0, 0,1,0,1,0, 0,1,1,1,0}, // 0
         {0,1,1,1,0, 0,0,1,0,0, 0,0,1,0,0, 0,1,1,0,0, 0,0,1,0,0}, // 1
         {0,1,1,1,0, 0,1,0,0,0, 0,1,1,1,0, 0,0,0,1,0, 0,1,1,1,0}, // 2
@@ -112,7 +112,7 @@ void display_num(int num) {
     // Converte o número para o formato de cores RGB
     uint32_t porcentColors[MAX_LEDS][3] = {0};  // Inicializa todas as cores como 0%
     for (int i = 0; i < MAX_LEDS; i++) {
-        if (nums[num][i]) {
+        if (matriz_led[num][i]) {
             porcentColors[i][0] = 100;  // Vermelho em 100%
         }
     }
