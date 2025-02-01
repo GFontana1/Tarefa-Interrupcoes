@@ -1,5 +1,3 @@
-# Generated Cmake Pico project file
-
 cmake_minimum_required(VERSION 3.13)
 
 set(CMAKE_C_STANDARD 11)
@@ -34,19 +32,22 @@ project(tarefa-U4C4 C CXX ASM)
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
+add_executable(tarefa-U4C4 tarefa-U4C4.c)
 
-add_executable(tarefa-U4C4 tarefa-U4C4.c )
+# Adicionar o arquivo PIO ao projeto
+pico_generate_pio_header(tarefa-U4C4 ${CMAKE_CURRENT_SOURCE_DIR}/ws2812.pio)
 
 pico_set_program_name(tarefa-U4C4 "tarefa-U4C4")
 pico_set_program_version(tarefa-U4C4 "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(tarefa-U4C4 0)
+pico_enable_stdio_uart(tarefa-U4C4 1)
 pico_enable_stdio_usb(tarefa-U4C4 1)
 
 # Add the standard library to the build
 target_link_libraries(tarefa-U4C4
-        pico_stdlib)
+        pico_stdlib
+        hardware_pio)  # Adicionar a biblioteca PIO
 
 # Add the standard include files to the build
 target_include_directories(tarefa-U4C4 PRIVATE
@@ -59,4 +60,3 @@ target_link_libraries(tarefa-U4C4
         )
 
 pico_add_extra_outputs(tarefa-U4C4)
-
