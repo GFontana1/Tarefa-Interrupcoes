@@ -130,18 +130,10 @@ int main() {
     int cont_b = 0;  // Conta quantas vezes o botão B foi pressionado
 
     stdio_init_all();
-
-    // Inicializa o LED RGB
     init_rgb_led();
-
-    // Inicializa os botões
     init_buttons();
-
-    // Configura as interrupções para os botões
     gpio_set_irq_enabled_with_callback(BUTTON_A_PIN, GPIO_IRQ_EDGE_FALL, true, &button_isr);
     gpio_set_irq_enabled_with_callback(BUTTON_B_PIN, GPIO_IRQ_EDGE_FALL, true, &button_isr);
-
-    // Inicializa a matriz de LEDs WS2812
     init_ws2812();
 
     while (1) {
